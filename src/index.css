@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes growWidth {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100vw;
+  }
+}
+
+@keyframes growAuto {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@layer base {
+  .scrollbarcustom::-webkit-scrollbar {
+    @apply w-[5px];
+  }
+
+  .scrollbarcustom::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-zinc-900;
+  }
+}
+
+@layer components {
+  .buttonhover {
+    @apply h-10 w-10 rounded-md p-2 hover:bg-zinc-700 cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .bgcustom1 {
+    background-color: #141414;
+    background-image: linear-gradient(
+        30deg,
+        #434343 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #434343 87.5%,
+        #434343
+      ),
+      linear-gradient(
+        150deg,
+        #434343 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #434343 87.5%,
+        #434343
+      ),
+      linear-gradient(
+        30deg,
+        #434343 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #434343 87.5%,
+        #434343
+      ),
+      linear-gradient(
+        150deg,
+        #434343 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #434343 87.5%,
+        #434343
+      ),
+      linear-gradient(
+        60deg,
+        #43434377 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #43434377 75%,
+        #43434377
+      ),
+      linear-gradient(
+        60deg,
+        #43434377 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #43434377 75%,
+        #43434377
+      );
+    background-size: 22px 39px;
+    background-position: 0 0, 0 0, 11px 19px, 11px 19px, 0 0, 11px 19px;
+  }
+
+  .animate-grow {
+    animation: growWidth 500ms ease-in-out 1;
+    animation-fill-mode: backwards;
+  }
+
+  .animate-grow2 {
+    animation: growAuto 300ms ease-in-out 1;
+    animation-fill-mode: backwards;
+  }
+
+  .fadeout > * {
+    animation: fadeOut 200ms ease-in-out 1;
+    animation-fill-mode: forwards;
+  }
+
+  .fadein > * {
+    animation: fadeIn 200ms ease-in-out 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
